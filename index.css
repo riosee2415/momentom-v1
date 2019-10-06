@@ -2,13 +2,27 @@ body {
   background-color: #2c3e50;
 }
 
+.info {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -250px;
+}
+
 .btn {
   cursor: pointer;
 }
 
 h1 {
-  color: #3c6382;
+  color: #ffffff;
+  font-size: 100px;
+  text-shadow: 2px 2px 2px black;
+  text-align: center;
   transition: color 0.5s ease-in-out;
+  border-bottom: 2px solid black;
 }
 
 .clicked {
@@ -20,8 +34,36 @@ h1 {
   display: none;
 }
 
+@keyframes textShadow {
+  0% {
+    text-shadow: 4px 4px 4px black;
+  }
+  50% {
+    text-shadow: 1px 1px 1px black;
+  }
+  100% {
+    text-shadow: 4px 4px 4px black;
+  }
+}
+
+@keyframes textShadow2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .showing {
   display: block;
+  color: white;
+  font-size: 34px;
+  margin-top: -50px;
+  animation: textShadow 1.5s ease-in infinite;
 }
 
 @keyframes fadeIn {
@@ -41,4 +83,76 @@ h1 {
   height: 100%;
   z-index: -1;
   animation: fadeIn 0.5s linear;
+}
+
+.weather {
+  color: white;
+  text-shadow: 4px 4px 4px gray;
+  font-weight: bold;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.form input {
+  border: none;
+  background-color: transparent;
+  padding: 20px 100px;
+  width: 300px;
+  color: white;
+  vertical-align: middle;
+  font-size: 30px;
+  text-align: center;
+}
+
+.form input::placeholder {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+}
+
+@keyframes fadeText {
+  0% {
+    color: white;
+  }
+  100% {
+    color: gray;
+  }
+}
+
+.toDoForm__input {
+  border: none;
+  background-color: transparent;
+  padding: 20px 100px;
+  width: 300px;
+  color: white;
+  vertical-align: middle;
+  font-size: 20px;
+  text-align: center;
+  animation: fadeText 1s linear infinite;
+}
+
+.toDoForm__input::placeholder {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: 3px 3px 3px black;
+}
+
+.toDoList {
+  list-style: none;
+}
+
+.toDoList button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 22px;
+  animation: textShadow2 1.3s infinite;
+}
+
+.toDoList li {
+  color: white;
+  font-size: 22px;
 }
